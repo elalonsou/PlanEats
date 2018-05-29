@@ -1,0 +1,31 @@
+<div *ngIf="authSrv.isAuthenticated | async">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mr-0 mr-md-2" href="#">Navbar</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/home']">Home</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/dashboard']">Planes</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="[ '/recetas' ]">Recetas</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <button type="button" class="btn btn-outline-primary">Hola</button>
+        <button type="button" (click)="signOut()" class="btn btn-outline-primary">
+            <i class="fas fa-sign-out-alt"></i></button>
+      </ul>
+    </div>
+  </nav>
+</div>

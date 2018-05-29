@@ -1,0 +1,195 @@
+<div class="home">
+
+  <div class="homeData">
+    <div class="homeData2">
+      <div style="position: static; height: 100%; width: 100%;">
+          <form action="">
+
+            <!-- **************************  TITULO *************************** -->
+            <div style="margin: 30px auto 0px; position: relative; height: 55px; width: 55px;">
+              <svg height="50" style="display: block;" viewBox="-3 -3 82 82" width="50"><circle cx="38" cy="38" fill="white" r="40">
+                </circle><path d="M27.5 71c3.3 1 6.7 1.6 10.3 1.6C57 72.6 72.6 57 72.6 37.8 72.6 18.6 57 3 37.8 3 18.6 3 3 18.6 3 37.8c0 14.8 9.3 27.5 22.4 32.5-.3-2.7-.6-7.2 0-10.3l4-17.2s-1-2-1-5.2c0-4.8 3-8.4 6.4-8.4 3 0 4.4 2.2 4.4 5 0 3-2 7.3-3 11.4C35.6 49 38 52 41.5 52c6.2 0 11-6.6 11-16 0-8.3-6-14-14.6-14-9.8 0-15.6 7.3-15.6 15 0 3 1 6 2.6 8 .3.2.3.5.2 1l-1 3.8c0 .6-.4.8-1 .4-4.4-2-7-8.3-7-13.4 0-11 7.8-21 22.8-21 12 0 21.3 8.6 21.3 20 0 12-7.4 21.6-18 21.6-3.4 0-6.7-1.8-7.8-4L32 61.7c-.8 3-3 7-4.5 9.4z" fill="#BD081C" fill-rule="evenodd"></path>
+              </svg>
+            </div>
+
+            <div>
+              <div style="margin: 5px 26px 26px; text-align: center; font-weight: bold; font-size: 28px; color: rgb(85, 85, 85);">Bienvenido a PlanEats</div>
+              <div style="text-align: center; font-weight: bold; color: rgb(204, 204, 204); font-size: 18px; margin: -25px 0px 20px;">Planifica tus comidas</div>
+            </div>
+
+            <!--*******************************************************************
+            ******************************  SigIn ********************************
+            ********************************************************************-->
+            <div class="sigIn" *ngIf="viewSigIn">
+              <!-- **************************  INPUTS *************************** -->
+              <div style="margin: 0px auto; width: 268px;">
+
+                <div class="form-group">
+                  <!-- <label for="emailSigIn">Dirección Email</label> -->
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-at" style="color:mediumblue"></i></div>
+                    </div>
+                    <input required [(ngModel)]="oSigIn.emailSigIn" autocomplete='email' type="email" class="form-control"  name="emailSigIn" id="emailSigIn" placeholder="Dirección email">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="pwdSigIn">Password</label> -->
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-unlock-alt"  style="color:mediumblue"></i></div>
+                    </div>
+                    <input [(ngModel)]="oSigIn.pswSigIn" type="text" class="form-control" name="pwdSigIn" id="pwdSigIn" placeholder="Password">
+                  </div>
+                </div>
+
+                <div id="error" class="msgError" *ngIf="msgError">
+                {{ msgError }}
+                </div>
+
+                <div style="margin-top: 30px">
+                  <!-- **************************  BOTON SIGIN EMAIL *************************** -->
+                  <button type="button" class="btn-icono" (click)="signInWithEmail();">
+                      <div style="border-radius: 2px; display: inline-block; height: 25px; margin-left: 7px; text-align: center; width: 25px;">
+                        <div style="position: relative; margin: 2px auto auto;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" >
+                              <path  fill="#FFFFFF" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+                        </div>
+                      </div>
+                      <span style="color: rgb(255, 255, 255); display: inline-block;
+                                  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;ヒラギノ角ゴ Pro W3&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, メイリオ, Meiryo, &quot;ＭＳ Ｐゴシック&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+                                  position: absolute; text-align: center; top: 50%; transform: translateY(-50%); vertical-align: top; width: 83%;">
+                        Continuar con Email</span>
+                  </button>
+
+                  <!-- **************************  BOTON SIGIN GOOGLE *************************** -->
+                  <button type="button" class="btn-icono" (click)="signInWithGoogle();">
+                      <div style="border-radius: 2px; background-color: rgb(255, 255, 255); display: inline-block; height: 25px; margin-left: 7px; text-align: center; width: 25px;">
+                        <div style="position: relative; margin: 2px auto auto;">
+                          <svg height="20" viewBox="0 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                              <path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4">
+                              </path>
+                              <path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15c38.83 77.13 118.64 130.01 210.9 130.01z" fill="#34a853">
+                              </path>
+                              <path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05">
+                              </path>
+                              <path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20c-92.25 0-172.07 52.89-210.9 130.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335">
+                              </path>
+                              <path d="M20 20h472v472H20V20z">
+                              </path>
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <span style="color: rgb(255, 255, 255); display: inline-block;
+                                  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;ヒラギノ角ゴ Pro W3&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, メイリオ, Meiryo, &quot;ＭＳ Ｐゴシック&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+                                  position: absolute; text-align: center; top: 50%; transform: translateY(-50%); vertical-align: top; width: 83%;">
+                                  Continuar con Google
+                      </span>
+                  </button>
+                </div>
+
+                <!-- **************************  BOTON CREAR CUENTA *************************** -->
+                <div style="margin-top: 30px; margin-bottom: 50px">
+                    <button type="button" class="btn-icono" (click)="cambiarVision();">
+                        <div style="border-radius: 2px; display: inline-block; height: 25px; margin-left: 7px; text-align: center; width: 25px;">
+                          <div style="position: relative; margin: 2px auto auto;">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                <path fill="#FFFFFF" d="M624 208h-64v-64c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v64h-64c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm-400 48c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>
+                          </div>
+                        </div>
+                        <span style="color: rgb(255, 255, 255); display: inline-block;
+                                    font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;ヒラギノ角ゴ Pro W3&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, メイリオ, Meiryo, &quot;ＭＳ Ｐゴシック&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+                                    position: absolute; text-align: center; top: 50%; transform: translateY(-50%); vertical-align: top; width: 83%;">
+                          Crear Cuenta</span>
+                    </button>
+                </div>
+              </div>
+            </div>
+             <!--*******************************************************************
+            *****************************  End SigIn *******************************
+            ********************************************************************-->
+
+
+            <!--*******************************************************************
+            ******************************  Create ********************************
+            *******************************************************************-->
+            <div class="sigIn" *ngIf="!viewSigIn">
+
+                <!-- **************************  INPUTS *************************** -->
+                <div style="margin: 0px auto; width: 268px;">
+
+                  <div class="form-group">
+                    <!-- <label for="emailSigIn">Dirección Email</label> -->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="fas fa-at" style="color:mediumblue"></i></div>
+                      </div>
+                      <input [(ngModel)]="oCreate.emailCreate" autocomplete='email' type="email" class="form-control"  name="emailCreate" id="emailCreate" placeholder="Dirección email">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <!-- <label for="pwdSigIn">Password</label> -->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><i class="fas fa-unlock-alt"  style="color:mediumblue"></i></div>
+                      </div>
+                      <input [(ngModel)]="oCreate.pswCreate1" type="text" class="form-control" name="pwdCreate1" id="pwdCreate1" placeholder="Password">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-unlock-alt"  style="color:mediumblue"></i></div>
+                        </div>
+                        <input [(ngModel)]="oCreate.pswCreate2" type="text" class="form-control" name="pwdCreate2" id="pwdCreate2" placeholder="Repetir Password">
+                      </div>
+                  </div>
+
+                  <div id="error" class="msgError" *ngIf="msgError">
+                  {{ msgError }}
+                  </div>
+
+                  <div style="margin-top: 30px">
+                    <!-- **************************  BOTON SIGIN EMAIL *************************** -->
+                    <button type="button" class="btn-icono" (click)="signInWithEmail();">
+                        <div style="border-radius: 2px; display: inline-block; height: 25px; margin-left: 7px; text-align: center; width: 25px;">
+                          <div style="position: relative; margin: 2px auto auto;">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" >
+                                <path  fill="#FFFFFF" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+                          </div>
+                        </div>
+                        <span style="color: rgb(255, 255, 255); display: inline-block;
+                                    font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;ヒラギノ角ゴ Pro W3&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, メイリオ, Meiryo, &quot;ＭＳ Ｐゴシック&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+                                    position: absolute; text-align: center; top: 50%; transform: translateY(-50%); vertical-align: top; width: 83%;">
+                          Crear Cuenta</span>
+                    </button>
+                  </div>
+
+                  <!-- **************************  BOTON YA TENGO CUENTA *************************** -->
+                  <div style="margin-top: 30px; margin-bottom: 50px" >
+                    <button type="button" class="btn-icono" (click)="cambiarVision();">
+                      <span style="color: rgb(255, 255, 255); display: inline-block;
+                                  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;ヒラギノ角ゴ Pro W3&quot;, &quot;Hiragino Kaku Gothic Pro&quot;, メイリオ, Meiryo, &quot;ＭＳ Ｐゴシック&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+                                  position: absolute; text-align: center; top: 50%; transform: translateY(-50%); vertical-align: top; width: 100%;">
+                        Ya tengo cuenta</span>
+                    </button>
+                  </div>
+                </div>
+
+            </div>
+            <!--*******************************************************************
+            ****************************  End Create ******************************
+            ********************************************************************-->
+
+          </form>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- <button type="button" class="btn btn-primary" (click)="signOut();" >signOut</button> -->
+</div>
+

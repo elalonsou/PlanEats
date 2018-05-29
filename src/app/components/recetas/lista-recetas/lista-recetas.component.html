@@ -1,0 +1,15 @@
+<div class="container">
+  <p>
+    lista-recetas works!
+  </p>
+
+  <div class="contenerdor_loading">
+    <ngx-loading [show]="loading"></ngx-loading>
+  </div>
+
+  <div *ngFor="let receta of recetas">
+    {{receta.Nombre}}
+  </div>
+
+  <button type="button" class="btn btn-primary">Prueba</button>
+</div>

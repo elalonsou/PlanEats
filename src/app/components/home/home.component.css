@@ -1,0 +1,56 @@
+.home{
+  background-color: gainsboro;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: auto;
+}
+
+.homeData{
+  padding-bottom: 70px;
+  padding-top: 106px;
+  min-height: 533px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+
+}
+
+.homeData2{
+  box-sizing:border-box;
+  position:relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  min-height: 533px;
+  padding-top: 10px;
+  width: 400px;
+}
+
+.btn-icono{
+  border: 0px none;
+  height: 40px;
+  display: block;
+  border-radius: 2px;
+  padding: 1px;
+  font-size: 15px;
+  font-weight: bold;
+  outline: medium none currentcolor;
+  box-shadow: none;
+  cursor: pointer;
+  margin-top: 0px;
+  vertical-align: middle;
+  text-align: left;
+  margin-bottom: 9px;
+  margin-right: 0px;
+  background-clip: padding-box;
+  transition: opacity 0.2s linear 0s;
+  position: relative;
+  width: 100%;
+  background-color: rgb(66, 133, 244);
+}
+
+.msgError{
+  color: red;
+}

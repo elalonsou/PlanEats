@@ -1,0 +1,16 @@
+
+$theme-colors: (
+  "primary": #007411,
+  "danger": #ff4136
+
+  // secondary
+  // success
+  // warning
+  // info
+  // light
+  // dark
+  // link
+);
+
+// Importacion de bootstrap, debe ir despues del codigo
+@import "node_modules/bootstrap/scss/bootstrap";
