@@ -1,15 +1,38 @@
 <div class="container">
-  <p>
-    lista-recetas works!
-  </p>
+  <h2>
+    Recetas
+  </h2>
+  <hr>
 
   <div class="contenerdor_loading">
     <ngx-loading [show]="loading"></ngx-loading>
   </div>
 
-  <div *ngFor="let receta of recetas">
-    {{receta.Nombre}}
-  </div>
 
-  <button type="button" class="btn btn-primary">Prueba</button>
+  <!-- class="list-group-flush" -->
+
+  <ul class="list-group">
+    <li class="list-group-item shadow-sm p-3 mb-2 bg-white rounded" *ngFor="let receta of recetas,let i=index">
+      <div class="row ">
+        <div class="col-md-5">
+          {{receta.Nombre}}
+        </div>
+        <div class="col-md-3">
+          {{receta.fechaCreacionFormateada}}
+        </div>
+        <div class="col-md-4">
+            {{receta.Nota}}
+            <app-ng-ratings [ratingVal]="receta.Nota" [id]="i"> </app-ng-ratings>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline-primary"><i class="far fa-edit pr-2"></i>Editar</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="row justify-content-end mt-3">
+    <button type="button" class="btn btn-outline-primary"><i class="fas fa-plus pr-2"></i>Nueva Receta</button>
+  </div>
 </div>
+

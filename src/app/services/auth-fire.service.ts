@@ -26,8 +26,6 @@ export class AuthFireService {
           _firebaseAuth.auth.useDeviceLanguage();
           this.user = _firebaseAuth.authState;
 
-          // this.logueado = Observable.create(this.logueadoObserver);
-
           this.user.subscribe(
             (user) => {
               if (user) {
@@ -40,14 +38,14 @@ export class AuthFireService {
                 this.usr.uid = this.userDetails.uid;
                 this.isAuthenticated.next(true);
                 // this.userData = usr;
-                console.log('Con Usuario');
+                // console.log('Con Usuario');
                 console.log(this.userDetails);
               } else {
                 this.isAuthenticated.next(false);
                 this.userDetails = null;
                 this.usr = null;
-                console.log('Sin Usuario');
-                console.log( this.userDetails);
+                // console.log('Sin Usuario');
+                // console.log( this.userDetails);
               }
             }
           );

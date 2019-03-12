@@ -21,7 +21,8 @@ import { AuthFireService } from './services/auth-fire.service';
 
 import { FormsModule } from '@angular/forms';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
-
+import { NgRatingsModule } from './shared/app-rating/ng-ratings.module';
+import { UsrImgPipe } from './pipes/usr-img.pipe';
 // import { RecetasService } from './services/recetas.service';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
     DashboardComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    ListaRecetasComponent
+    ListaRecetasComponent,
+    UsrImgPipe
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
       primaryColour: '#ff11aa',
       secondaryColour: '#ffff11',
       tertiaryColour: '#ff3344'
-    })
+    }),
+    NgRatingsModule
   ],
   providers: [AuthFireService],
   bootstrap: [AppComponent]
